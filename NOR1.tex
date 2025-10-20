@@ -1,0 +1,51 @@
+\documentclass{standalone}
+\usepackage{circuitikz} % 电路元件（电池、灯泡、导线等）
+\usetikzlibrary{shapes.gates.logic.US, positioning} % 逻辑门形状与定位
+\begin{document}
+
+\begin{circuitikz}[american, line width=0.8pt]
+% ==== 两路电源（电池符号） ====
+% 第一路电源 V_A（上）
+\draw (0,2) to[battery1,l=$V_A$] (0,0);
+% 第二路电源 V_B（下）
+\draw (0,-1.5) to[battery1,l=$V_B$] (0,-3.5);
+
+% 把电源引出到 NOR 门的输入点
+\draw (0,1) -- (1.6,1); % V_A 引线
+\draw (0,-2.5) -- (1.6,-2.5); % V_B 引线
+
+% ==== NOR 门（tikz 逻辑门） ====
+% 我们把 NOR 门放在 (3.6,-0.75) 位置，两个输入分别连接到 gate.input 1/2
+\node[nor gate US, draw, rotate=0, logic gate inputs=nn, minimum width=20mm] (G) at (3.6,-0.75) {};
+
+% 将引线连接到 NOR 的输入引脚（使用 gate 的预定义锚点）
+\draw (1.6,1) -- (G.input 1);
+\draw (1.6,-2.5) -- (G.input 2);
+
+% 在输入线附近加上小圆点表示连接点（可选）
+\fill (1.6,1) circle (0.6pt);
+\fill (1.6,-2.5) circle (0.6pt);
+
+% 给两个输入标注高/低电平（可选示例）
+\node[left] at (0,1) {Input A};
+\node[left] at (0,-2.5) {Input B};
+
+% ==== 输出到灯泡 ====
+% 从 NOR 输出画导线到灯泡
+% 把灯泡放在右侧（使用 circuitikz 的 lamp 元件）
+\draw (G.output) -- ++(1.0,0) coordinate (toLamp)
+to[bulb,l=$L$] ++(2.0,0) coordinate (lampRight);
+
+% 从灯泡右端接回公共地（或回到电源负极，形成回路）
+% \draw (lampRight) -- ++(0,-1.8) coordinate (downToGround);
+% \draw (downToGround) -- (-0.5,-1.8) -- (-0.5,-3.5); % 回到底部电源负端附近
+% % 标注地/负极连接（可根据需要修改为 GND 符号）
+% \node[right] at (downToGround) {Return / Negative};
+
+\draw (lampRight) node[ground]{};
+% ==== 在 NOR 上标注（可选） ====
+\node[above right=2pt of G] {NOR};
+
+\end{circuitikz}
+
+\end{document}

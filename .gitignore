@@ -1,0 +1,8 @@
+*.pdf
+*.gz
+*.log
+*.aux
+*.toc
+*.out
+*.lof
+.out/

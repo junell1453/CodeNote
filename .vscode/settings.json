@@ -1,0 +1,71 @@
+{
+  // ===============================
+  // LaTeX Workshop 基础配置
+  // ===============================
+
+  // 保存时自动编译
+  "latex-workshop.latex.autoBuild.run": "onSave",
+
+  // PDF 预览内嵌在 VS Code 标签页中
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // 输出文件存放到 out 文件夹
+  "latex-workshop.latex.outDir": "./out",
+
+  // ===============================
+  // 使用 xelatex 作为主编译器
+  // ===============================
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "xelatex -> bibtex -> xelatex*2",
+      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+    }
+  ],
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",              // 启用同步（PDF 与源文件定位）
+        "-interaction=nonstopmode",// 出错不中断
+        "-file-line-error",        // 显示行号错误
+        "-output-directory=./out", // ⬅️ 关键：指定输出目录
+        "%DOCFILE%"                // 当前文档
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["./out/%DOCFILE%"]
+    }
+  ],
+
+  // 默认使用上次或唯一的 recipe（即 xelatex）
+  "latex-workshop.latex.recipe.default": "lastUsed",
+
+  // ===============================
+  // 额外优化选项（可选）
+  // ===============================
+
+  // 自动清理编译产生的辅助文件
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot",
+    "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo",
+    "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk"
+  ],
+
+  // 同步 PDF 定位（从 PDF 点击跳回源文件）
+  "latex-workshop.synctex.afterBuild.enabled": true,
+
+  // 出错时显示弹窗
+  "latex-workshop.message.error.show": true,
+
+  // 报错信息在控制台显示
+  "latex-workshop.latex.logging.level": "info"
+}
