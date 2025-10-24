@@ -76,6 +76,44 @@
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="HEADINGS"/>
 <node TEXT="门电路" POSITION="bottom_or_right" ID="ID_590030202" CREATED="1761226237735" MODIFIED="1761226242576">
 <edge COLOR="#007c00"/>
+<node TEXT="常见" POSITION="bottom_or_right" ID="ID_1345232434" CREATED="1761321077542" MODIFIED="1761321081267">
+<node TEXT="\latex $\overline{A}$" ID="ID_1791664033" CREATED="1761321140994" MODIFIED="1761321164847"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      NOT
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="A+B" ID="ID_806436965" CREATED="1761321081818" MODIFIED="1761321109659"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      OR
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="\latex $A\cdot B$" ID="ID_1530934810" CREATED="1761321110802" MODIFIED="1761321140243"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      AND
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
 <node TEXT="NAND" POSITION="bottom_or_right" ID="ID_1890268076" CREATED="1761230566198" MODIFIED="1761231736279"><richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -87,17 +125,18 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761231740600"><richcontent TYPE="DETAILS">
+<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761321189506"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      全1才0,AND反
+      全1才0
     </p>
   </body>
 </html></richcontent>
+<node TEXT="AND 反" ID="ID_1111566854" CREATED="1761321213620" MODIFIED="1761321235407"/>
 </node>
 <node TEXT="函数完备" ID="ID_624916878" CREATED="1761231758755" MODIFIED="1761231781344">
 <node TEXT="\latex $\overline{A}$=A  NAND  A" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761234649135"><richcontent TYPE="DETAILS">
@@ -138,14 +177,14 @@
 </node>
 </node>
 </node>
-<node TEXT="NOR" POSITION="bottom_or_right" ID="ID_378731955" CREATED="1761200272872" MODIFIED="1761231748100"><richcontent TYPE="DETAILS">
+<node TEXT="NOR" POSITION="bottom_or_right" ID="ID_378731955" CREATED="1761200272872" MODIFIED="1761319993846"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      异或
+      或非
     </p>
   </body>
 </html></richcontent>
@@ -208,6 +247,30 @@
   </body>
 </html></richcontent>
 </node>
+</node>
+</node>
+<node TEXT="XOR" POSITION="bottom_or_right" ID="ID_1988304643" CREATED="1761320011185" MODIFIED="1761320022488"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      异或
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="\latex $A \oplus B=\overline{A}\cdot B+A\cdot\overline{B}$" ID="ID_202818276" CREATED="1761320393819" MODIFIED="1761320842132"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      同0异1
+    </p>
+  </body>
+</html></richcontent>
 </node>
 </node>
 </node>
