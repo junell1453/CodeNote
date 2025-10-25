@@ -11,10 +11,11 @@
 \maketitle
 
 \section{引言}
-虽说是Code笔记，但总觉纸上谈兵脑中无物，无意中发现Turing Complete这游戏，几关下来深感吃力，结合书中布尔代数于纸上推算良久方略有所获，随有本文。
+本文按Turing Complete游戏过关顺序，采用布尔代数表达。
 
 \subsection{NAND生万物}
 天地混沌，NAND为始。不知何人如何创建NAND门，然其功用至大，盖因其可构造任意逻辑电路也。
+这种性质有个专属名词叫函数完备，俗称万能电路，只有NAND和NOR有这个性质。
 
 \begin{center}
 \begin{circuitikz}
@@ -22,22 +23,21 @@
   (0,0) node[nand port] (nand1) {\texttt{NAND}}
   (nand1.in 1) node[left] {$A$}
   (nand1.in 2) node[left] {$B$}
-  (nand1.out) node[right] {$Y = \overline{A \cdot B}$};
+  (nand1.out) node[right] {$\overline{A \cdot B}$};
 \end{circuitikz}
 \end{center}
 
 \subsection{NOT逆阴阳}
 \begin{circuitikz}
-  \draw (0,0) node[above]{$A$} to[short, o-] ++(2,0)
+  \draw (0,0) node[above](A){$A$} to[short, o-] ++(1,0)
   node[nand port,anchor=in 1] (nand1){}
-  (nand1.in 2)--++(0,-1) 
-  node[nand port,anchor=out] (nand2){}
-  (nand1.out) node[right] {$Y = \overline{A}$};
+  (nand1.in 2)-|(A) 
+  (nand1.out) node[right] {$A\  \texttt{NAND}\  A = \overline{A}$};
 
   \draw[shift={(8,0)}]
   (0,0) node[not port] (not1) {\texttt{N}}
   (not1.in 1) node[left] {$A$}
-  (not1.out) node[right] {$Y = \overline{A}$};  
+  (not1.out) node[right] {$\overline{A}$};  
 \end{circuitikz}
 
 \subsection{AND同生死}
@@ -45,23 +45,23 @@
   \draw (0,0) node[nand port] (nand1) {}
   (nand1.in 1) node[left] {$A$}
   (nand1.in 2) node[left] {$B$}
-  (nand1.out) --++(1,0)
+  (nand1.out) --++(.2,0)
   node[not port,anchor=in] (not1){}
-  (not1.out)node[right]{$Y = A \cdot B$};
+  (not1.out)node[right]{$\overline{A\  \texttt{NAND}\  B} = A \cdot B$};
 
   \draw[shift={(7,0)}]
   (0,0) node[and port] (and1) {\texttt{AND}}
   (and1.in 1) node[left] {$A$}
   (and1.in 2) node[left] {$B$}
-  (and1.out) node[right] {$Y = A \cdot B$};
+  (and1.out) node[right] {$A \cdot B$};
 \end{circuitikz}
 
 
 \subsection{NOR}
 \begin{circuitikz}[american]
   \draw (0,0) node[nand port] (nand1) {}
-  (nand1.in 1)--++(-.5,1)node[not port,anchor=out](not1){}
-  (nand1.in 2)--++(-.5,-1)node[not port,anchor=out](not2){}
+  (nand1.in 1)--++(-.5,.5)node[not port,anchor=out](not1){}
+  (nand1.in 2)--++(-.5,-.5)node[not port,anchor=out](not2){}
   (not1.in) node[left]{$A$}
   (not2.in) node[left]{$B$}
   (nand1.out)--++(.2,0)node[not port,anchor=in](not3){}

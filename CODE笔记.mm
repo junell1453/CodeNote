@@ -5,7 +5,7 @@
 </bookmarks>
 <node TEXT="CODE笔记" FOLDED="false" ID="ID_874441607" CREATED="1761200221034" MODIFIED="1761225778490" LINK="../yuan/todo-sunny.mm#ID_874441607">
 <edge STYLE="bezier" COLOR="#0000ff" WIDTH="1" DASH="SOLID"/>
-<hook NAME="MapStyle" background="#cddec2ff" zoom="1.4641001">
+<hook NAME="MapStyle" background="#cddec2ff" zoom="1.1">
     <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_tags="UNDER_NODES" show_note_icons="true" fit_to_viewport="false" show_icons="BESIDE_NODES" showTagCategories="false"/>
     <tags category_separator="::"/>
 
@@ -114,7 +114,7 @@
 </html></richcontent>
 </node>
 </node>
-<node TEXT="NAND" POSITION="bottom_or_right" ID="ID_1890268076" CREATED="1761230566198" MODIFIED="1761231736279"><richcontent TYPE="DETAILS">
+<node TEXT="NAND" POSITION="bottom_or_right" ID="ID_1890268076" CREATED="1761230566198" MODIFIED="1761377494003"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -125,7 +125,8 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761321189506"><richcontent TYPE="DETAILS">
+<hook URI="files/output.png" SIZE="0.75" NAME="ExternalObject"/>
+<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761377485171"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -139,7 +140,7 @@
 <node TEXT="AND 反" ID="ID_1111566854" CREATED="1761321213620" MODIFIED="1761321235407"/>
 </node>
 <node TEXT="函数完备" ID="ID_624916878" CREATED="1761231758755" MODIFIED="1761231781344">
-<node TEXT="\latex $\overline{A}$=A  NAND  A" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761234649135"><richcontent TYPE="DETAILS">
+<node TEXT="\latex $\overline{A}$=A  NAND  A" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761379831460"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -150,6 +151,7 @@
     </p>
   </body>
 </html></richcontent>
+<hook URI="file:///D:/work/CodeNote/files/ANANDA_rbg.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
 <node TEXT="\latex $A\cdot B=\overline{A\   \text{NAND}\   B}$" ID="ID_474762019" CREATED="1761231782463" MODIFIED="1761234840100"><richcontent TYPE="DETAILS">
 <html>
