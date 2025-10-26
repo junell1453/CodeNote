@@ -5,7 +5,7 @@
 </bookmarks>
 <node TEXT="CODE笔记" FOLDED="false" ID="ID_874441607" CREATED="1761200221034" MODIFIED="1761225778490" LINK="../yuan/todo-sunny.mm#ID_874441607">
 <edge STYLE="bezier" COLOR="#0000ff" WIDTH="1" DASH="SOLID"/>
-<hook NAME="MapStyle" background="#cddec2ff" zoom="1.1">
+<hook NAME="MapStyle" background="#cddec2ff" zoom="1.6105102">
     <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_tags="UNDER_NODES" show_note_icons="true" fit_to_viewport="false" show_icons="BESIDE_NODES" showTagCategories="false"/>
     <tags category_separator="::"/>
 
@@ -72,7 +72,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="76" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="77" RULE="ON_BRANCH_CREATION"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="HEADINGS"/>
 <node TEXT="门电路" POSITION="bottom_or_right" ID="ID_590030202" CREATED="1761226237735" MODIFIED="1761226242576">
 <edge COLOR="#007c00"/>
@@ -126,21 +126,20 @@
   </body>
 </html></richcontent>
 <hook URI="files/output.png" SIZE="0.75" NAME="ExternalObject"/>
-<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761377485171"><richcontent TYPE="DETAILS">
+<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761448264638"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      全1才0
+      全1才0，AND 反
     </p>
   </body>
 </html></richcontent>
-<node TEXT="AND 反" ID="ID_1111566854" CREATED="1761321213620" MODIFIED="1761321235407"/>
 </node>
 <node TEXT="函数完备" ID="ID_624916878" CREATED="1761231758755" MODIFIED="1761231781344">
-<node TEXT="\latex $\overline{A}$=A  NAND  A" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761379831460"><richcontent TYPE="DETAILS">
+<node TEXT="\latex $\overline{A}$=A  NAND  A" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761446995983"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -151,7 +150,7 @@
     </p>
   </body>
 </html></richcontent>
-<hook URI="file:///D:/work/CodeNote/files/ANANDA_rbg.png" SIZE="1.0" NAME="ExternalObject"/>
+<hook URI="file:///D:/sunny/CodeNote/files/ANANDA_rbg.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
 <node TEXT="\latex $A\cdot B=\overline{A\   \text{NAND}\   B}$" ID="ID_474762019" CREATED="1761231782463" MODIFIED="1761234840100"><richcontent TYPE="DETAILS">
 <html>
@@ -311,6 +310,34 @@
 <node TEXT="" ID="ID_219383091" CREATED="1761235912611" MODIFIED="1761235912611"/>
 </node>
 <node TEXT="继电器到逻辑门" POSITION="top_or_left" ID="ID_1491214990" CREATED="1761200258311" MODIFIED="1761235742593"/>
+</node>
+</node>
+<node TEXT="Latex circuitikz" POSITION="top_or_left" ID="ID_398419963" CREATED="1761461299677" MODIFIED="1761461337194">
+<edge COLOR="#7c7c00"/>
+<node TEXT="manual" ID="ID_1749853299" CREATED="1761461351469" MODIFIED="1761461389510" LINK="http://mirrors.ctan.org/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf"/>
+<node TEXT="基本语法" ID="ID_425310709" CREATED="1761461872374" MODIFIED="1761461877665">
+<node TEXT="连接" POSITION="top_or_left" ID="ID_457027025" CREATED="1761461845094" MODIFIED="1761461888150">
+<node TEXT="--,-|,|-" ID="ID_55569355" CREATED="1761461869669" MODIFIED="1761461871296"/>
+<node TEXT="(B |- not1.in) 连接点坐标" ID="ID_1401746268" CREATED="1761463494322" MODIFIED="1761463579301"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      B与not1直线连接的虚拟拐点
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="to[]" POSITION="top_or_left" ID="ID_1760124984" CREATED="1761461401651" MODIFIED="1761463656337">
+<node TEXT="从当前位置吐出一个东西" ID="ID_782005136" CREATED="1761463658411" MODIFIED="1761463659716"/>
+<node TEXT="short,o-" ID="ID_269226237" CREATED="1761461490343" MODIFIED="1761463609027">
+<node TEXT="等价node[below](B){$B$}node[ocirc]{}" POSITION="top_or_left" ID="ID_1800147017" CREATED="1761461488355" MODIFIED="1761461489616"/>
+</node>
+<node TEXT="" ID="ID_118653209" CREATED="1761463606185" MODIFIED="1761463606185"/>
+</node>
 </node>
 </node>
 </node>

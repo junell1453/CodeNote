@@ -2,6 +2,9 @@
 \usepackage{xeCJK}                   % ✅ 中文支持
 \setCJKmainfont{SimSun}              % ✅ 设置中文字体
 \usepackage{circuitikz}
+\tikzset{
+  snot port/.style = {not port, scale=0.6}
+}
 
 \title{Code 笔记}
 \author{Sunny}
@@ -13,7 +16,7 @@
 \section{引言}
 本文按Turing Complete游戏过关顺序，采用布尔代数表达。
 
-\subsection{NAND生万物}
+\subsection{NAND 全阳转阴}
 天地混沌，NAND为始。不知何人如何创建NAND门，然其功用至大，盖因其可构造任意逻辑电路也。
 这种性质有个专属名词叫函数完备，俗称万能电路，只有NAND和NOR有这个性质。
 
@@ -40,13 +43,13 @@
   (not1.out) node[right] {$\overline{A}$};  
 \end{circuitikz}
 
-\subsection{AND同生死}
+\subsection{AND 全阳则阳}
 \begin{circuitikz}
   \draw (0,0) node[nand port] (nand1) {}
   (nand1.in 1) node[left] {$A$}
   (nand1.in 2) node[left] {$B$}
   (nand1.out) --++(.2,0)
-  node[not port,anchor=in] (not1){}
+  node[snot port,anchor=in] (not1){}
   (not1.out)node[right]{$\overline{A\  \texttt{NAND}\  B} = A \cdot B$};
 
   \draw[shift={(7,0)}]
@@ -56,22 +59,64 @@
   (and1.out) node[right] {$A \cdot B$};
 \end{circuitikz}
 
-
-\subsection{NOR}
-\begin{circuitikz}[american]
+\subsection{OR 全阴则阴}
+\begin{circuitikz}
   \draw (0,0) node[nand port] (nand1) {}
-  (nand1.in 1)--++(-.5,.5)node[not port,anchor=out](not1){}
-  (nand1.in 2)--++(-.5,-.5)node[not port,anchor=out](not2){}
+  (nand1.in 1)--++(-.3,0)node[not port,anchor=out,scale=.4](not1){}
+  (nand1.in 2)--++(-.3,0)node[not port,anchor=out,scale=.4](not2){}
   (not1.in) node[left]{$A$}
   (not2.in) node[left]{$B$}
-  (nand1.out)--++(.2,0)node[not port,anchor=in](not3){}
-  (not3.out)node[right] {$Y = \overline{A} \cdot \overline{B}$};
+  (nand1.out)node[right] {$A\  \texttt{OR}\  B = A+B$};  
 
+  \draw[shift={(6,0)}]
+  (0,0) node[or port] (or1) {\texttt{OR}}
+  (or1.in 1) node[left] {$A$}
+  (or1.in 2) node[left] {$B$}
+  (or1.out) node[right] {$A+B$};  
 
-  % \draw[shift={(7,0)}]
-  % (0,0) node[nor port] (nor1) {\texttt{NOR}}
-  % (nor1.in 1) node[left] {$A$}
-  % (nor1.in 2) node[left] {$B$}
-  % (nor1.out) node[right] {$Y = A + B$};
 \end{circuitikz}
+
+\subsection{NOR 全阴转阳}
+\begin{circuitikz}[american]
+  \draw (0,0) node[nand port] (nand1) {}
+  (nand1.in 1)--++(-.3,0)node[not port,anchor=out,scale=.4](not1){}
+  (nand1.in 2)--++(-.3,0)node[not port,anchor=out,scale=.4](not2){}
+  (not1.in) node[left]{$A$}
+  (not2.in) node[left]{$B$}
+  (nand1.out)--++(.2,0)node[snot port,anchor=in](not3){}
+  (not3.out)node[right] {$A\  \texttt{NOR}\  B = \overline{A} \cdot \overline{B}=\overline{A+B}$};
+
+\end{circuitikz}
+
+\begin{circuitikz}
+  \draw
+  (0,0) node[nor port] (nor1) {\texttt{NOR}}
+  (nor1.in 1) node[left] {$A$}
+  (nor1.in 2) node[left] {$B$}
+  (nor1.out) node[right] {$\overline{A} \cdot \overline{B}=\overline{A+B}$};  
+\end{circuitikz}
+
+\subsection{XOR}
+\begin{circuitikz}
+  \draw (0,0) node[left]{$A$} to[short, o-]++(.5,0)coordinate(JA)
+  (JA)--++(.5,0)node[snot port,anchor=in](nota){}
+  (nota.out)-|++(.5,0) node[and port,anchor=in 1](and1){}
+  (and1.out)-|++(.5,-.4)node[or port,anchor=in 1](or1){}
+  (or1.in 2)|-++(-.5,-.4)node[and port,anchor=out](and2){}
+  (and2.in 2)--++(-.5,0)node[snot port,anchor=out](notb){}
+  (notb.in)--++(-.6,0)coordinate(JB)
+  to[short,*-](JB|-and1.in 2)--(and1.in 2)
+  (JB)--++(-.4,0)node[left]{$B$}node[ocirc]{}
+  (JA)to[short,*-](JA|-and2.in 1)--(and2.in 1)
+  (or1.out)node[right] 
+    {$A\  \texttt{XOR}\  B=\overline{A} \cdot B+A\cdot \overline{B}$};    
+\end{circuitikz}
+
+\begin{circuitikz}
+  \draw (0,0) node[xor port] (xor1) {}
+  (xor1.in 1) node[left] {$A$}
+  (xor1.in 2) node[left] {$B$}
+  (xor1.out) node[right] {$A\oplus B$};  
+\end{circuitikz}  
+
 \end{document}
