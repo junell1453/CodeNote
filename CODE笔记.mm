@@ -72,7 +72,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="77" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="79" RULE="ON_BRANCH_CREATION"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="HEADINGS"/>
 <node TEXT="门电路" POSITION="bottom_or_right" ID="ID_590030202" CREATED="1761226237735" MODIFIED="1761226242576">
 <edge COLOR="#007c00"/>
@@ -113,7 +113,6 @@
   </body>
 </html></richcontent>
 </node>
-</node>
 <node TEXT="NAND" POSITION="bottom_or_right" ID="ID_1890268076" CREATED="1761230566198" MODIFIED="1761377494003"><richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -137,45 +136,6 @@
     </p>
   </body>
 </html></richcontent>
-</node>
-<node TEXT="函数完备" ID="ID_624916878" CREATED="1761231758755" MODIFIED="1761231781344">
-<node TEXT="\latex $\overline{A}$=A  NAND  A" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761446995983"><richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      NOT
-    </p>
-  </body>
-</html></richcontent>
-<hook URI="file:///D:/sunny/CodeNote/files/ANANDA_rbg.png" SIZE="1.0" NAME="ExternalObject"/>
-</node>
-<node TEXT="\latex $A\cdot B=\overline{A\   \text{NAND}\   B}$" ID="ID_474762019" CREATED="1761231782463" MODIFIED="1761234840100"><richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      AND
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="\latex A+B=$\overline{A}$ NAND $\overline{B}$" ID="ID_325430235" CREATED="1761235090588" MODIFIED="1761235303171"><richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      OR
-    </p>
-  </body>
-</html></richcontent>
-</node>
 </node>
 </node>
 <node TEXT="NOR" POSITION="bottom_or_right" ID="ID_378731955" CREATED="1761200272872" MODIFIED="1761319993846"><richcontent TYPE="DETAILS">
@@ -201,7 +161,45 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="函数完备" ID="ID_1451836093" CREATED="1761226213002" MODIFIED="1761230650181"><richcontent TYPE="DETAILS">
+</node>
+<node TEXT="XOR" POSITION="bottom_or_right" ID="ID_1988304643" CREATED="1761320011185" MODIFIED="1761320022488"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      异或
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="\latex $A \oplus B=\overline{A}\cdot B+A\cdot\overline{B}&#xa;=(A+B)\cdot(\overline{A\cdot B})$" POSITION="bottom_or_right" ID="ID_1217023788" CREATED="1761640900698" MODIFIED="1761652304392"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      同0异1
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="\latex $(A+B)\cdot(\overline{A\cdot B})&#xa;=(A+B)\cdot(\overline{A}+\overline{B})\\&#xa;=A\overline{A}+A\overline{B}+B\overline{A}+B\overline{B}\\&#xa;=0+A\overline{B}+\overline{A}B+0$&#xa;" ID="ID_1612077544" CREATED="1761641612618" MODIFIED="1761652350841"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      德摩根律,分配律
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="函数完备" POSITION="bottom_or_right" ID="ID_1862140092" CREATED="1761652975368" MODIFIED="1761652992535"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -212,7 +210,8 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="\latex $\overline{A}$=A  NOR  A" ID="ID_265218899" CREATED="1761229571509" MODIFIED="1761229868583"><richcontent TYPE="DETAILS">
+<node TEXT="NAND" ID="ID_879330450" CREATED="1761653019476" MODIFIED="1761653024884">
+<node TEXT="\latex $\overline{A}$=A  NAND  A" POSITION="bottom_or_right" ID="ID_1104467914" CREATED="1761229571509" MODIFIED="1761446995983"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -223,8 +222,9 @@
     </p>
   </body>
 </html></richcontent>
+<hook URI="file:///D:/sunny/CodeNote/files/ANANDA_rbg.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
-<node TEXT="\latex $A\cdot B=\overline{A}\   \text{NOR}\   \overline{B}$" ID="ID_344799371" CREATED="1761229743763" MODIFIED="1761231973343"><richcontent TYPE="DETAILS">
+<node TEXT="\latex $A\cdot B=\overline{A\   \text{NAND}\   B}$" POSITION="bottom_or_right" ID="ID_474762019" CREATED="1761231782463" MODIFIED="1761234840100"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -236,7 +236,45 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="\latex A+B=$\overline{\overline{A+B}}&#xa;=\overline{\text(A \   NOR \   B)}$" ID="ID_1539319269" CREATED="1761230312238" MODIFIED="1761230557707"><richcontent TYPE="DETAILS">
+<node TEXT="\latex A+B=$\overline{A}$ NAND $\overline{B}$" POSITION="bottom_or_right" ID="ID_325430235" CREATED="1761235090588" MODIFIED="1761235303171"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      OR
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="NOR" ID="ID_73073551" CREATED="1761652997804" MODIFIED="1761653003349">
+<node TEXT="\latex $\overline{A}$=A  NOR  A" POSITION="bottom_or_right" ID="ID_265218899" CREATED="1761229571509" MODIFIED="1761229868583"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      NOT
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="\latex $A\cdot B=\overline{A}\   \text{NOR}\   \overline{B}$" POSITION="bottom_or_right" ID="ID_344799371" CREATED="1761229743763" MODIFIED="1761231973343"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      AND
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="\latex A+B=$\overline{\overline{A+B}}&#xa;=\overline{\text(A \   NOR \   B)}$" POSITION="bottom_or_right" ID="ID_1539319269" CREATED="1761230312238" MODIFIED="1761230557707"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -250,28 +288,20 @@
 </node>
 </node>
 </node>
-<node TEXT="XOR" POSITION="bottom_or_right" ID="ID_1988304643" CREATED="1761320011185" MODIFIED="1761320022488"><richcontent TYPE="DETAILS">
+<node TEXT="电路推导" POSITION="bottom_or_right" ID="ID_278606848" CREATED="1761652371899" MODIFIED="1761652380379">
+<node TEXT="XOR" POSITION="bottom_or_right" ID="ID_679308466" CREATED="1761653127134" MODIFIED="1761653137764">
+<node TEXT="\latex &#xa;\begin{tabular}{|c|c|c|c|c|}&#xa;\hline&#xa;\textbf{A in} &amp; \textbf{B in} &amp; \textbf{OR out} &amp; \textbf{NAND out} &amp; \textbf{期望} \\&#xa;\hline&#xa;0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\&#xa;\hline&#xa;0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\&#xa;\hline&#xa;1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\&#xa;\hline&#xa;1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\&#xa;\hline&#xa;\end{tabular}" POSITION="bottom_or_right" ID="ID_351177309" CREATED="1761640209078" MODIFIED="1761652753506"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      异或
+      期望与OR/NAND相差一位,做表放一起发现可AND
     </p>
   </body>
 </html></richcontent>
-<node TEXT="\latex $A \oplus B=\overline{A}\cdot B+A\cdot\overline{B}$" ID="ID_202818276" CREATED="1761320393819" MODIFIED="1761320842132"><richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      同0异1
-    </p>
-  </body>
-</html></richcontent>
+</node>
 </node>
 </node>
 </node>
@@ -310,32 +340,6 @@
 <node TEXT="" ID="ID_219383091" CREATED="1761235912611" MODIFIED="1761235912611"/>
 </node>
 <node TEXT="继电器到逻辑门" POSITION="top_or_left" ID="ID_1491214990" CREATED="1761200258311" MODIFIED="1761235742593"/>
-<node TEXT="门电路推导" POSITION="top_or_left" ID="ID_1000280404" CREATED="1761572207557" MODIFIED="1761572218183">
-<node TEXT="加法器" ID="ID_348174821" CREATED="1761577948931" MODIFIED="1761578007828">
-<node TEXT="画结果表，分加法、进位两张表" ID="ID_1605541787" CREATED="1761578060659" MODIFIED="1761578145179"/>
-<node TEXT="进位表与AND效果相同" ID="ID_1867766876" CREATED="1761578008932" MODIFIED="1761578157374"/>
-<node TEXT="加法表" ID="ID_678719041" CREATED="1761578040417" MODIFIED="1761578189122">
-<node TEXT="与OR相似除右下角" ID="ID_1342694893" CREATED="1761578189578" MODIFIED="1761578206959"/>
-<node TEXT="与NAND相似除左上角" ID="ID_1255201970" CREATED="1761578207514" MODIFIED="1761578226778"/>
-<node ID="ID_1784181894" CREATED="1761578227994" MODIFIED="1761578277035"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      合并加发表<content ename="content"/>与OR、NAND到新结果表
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="对比OR/NAND的输出与想要结果关系" ID="ID_726741150" CREATED="1761578277598" MODIFIED="1761578307615"/>
-<node TEXT="推断出需要AND连接OR/NAND" ID="ID_1221313735" CREATED="1761578314617" MODIFIED="1761578336129"/>
-</node>
-</node>
-</node>
 </node>
 </node>
 <node TEXT="Latex circuitikz" POSITION="top_or_left" ID="ID_398419963" CREATED="1761461299677" MODIFIED="1761461337194">
@@ -365,6 +369,11 @@
 <node TEXT="" ID="ID_118653209" CREATED="1761463606185" MODIFIED="1761463606185"/>
 </node>
 </node>
+</node>
+<node TEXT="加法器" POSITION="bottom_or_right" ID="ID_348174821" CREATED="1761577948931" MODIFIED="1761652247083">
+<edge COLOR="#0000ff"/>
+<node TEXT="画结果表，分加法、进位两张表" ID="ID_1605541787" CREATED="1761578060659" MODIFIED="1761578145179"/>
+<node TEXT="进位表与AND效果相同" ID="ID_1867766876" CREATED="1761578008932" MODIFIED="1761578157374"/>
 </node>
 </node>
 </map>
