@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[scale=0.8, transform shape]
+    % 输入节点
+    \node (A) at (0,2) {A};
+    \node (B) at (0,0) {B};
+    
+    % XOR 门 - 计算和
+    \node[xor port] (xor) at (2,1) {};
+    
+    % AND 门 - 计算进位
+    \node[and port] (and) at (2,-1) {};
+    
+    % 输出节点
+    \node (Sum) at (4,1) {Sum};
+    \node (Carry) at (4,-1) {Carry};
+    
+    % 连接线
+    \draw (A) -| (xor.in 1);
+    \draw (A) |- (and.in 1);
+    \draw (B) -| (xor.in 2);
+    \draw (B) |- (and.in 2);
+    \draw (xor.out) -- (Sum);
+    \draw (and.out) -- (Carry);
+\end{circuitikz}
+\caption{半加器电路图}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[scale=0.8, transform shape]
+    % 输入节点
+    \node (A) at (0,3) {A};
+    \node (B) at (0,1.5) {B};
+    \node (Cin) at (0,0) {C$_{in}$};
+    
+    % 第一级 XOR 门
+    \node[xor port] (xor1) at (2,2.25) {};
+    
+    % 第二级 XOR 门 - 计算和
+    \node[xor port] (xor2) at (5,1.5) {};
+    
+    % AND 门
+    \node[and port] (and1) at (3.5,0.75) {};
+    \node[and port] (and2) at (3.5,-0.75) {};
+    
+    % OR 门 - 计算进位
+    \node[or port] (or) at (6,-0.25) {};
+    
+    % 输出节点
+    \node (Sum) at (7,1.5) {Sum};
+    \node (Cout) at (7,-0.25) {C$_{out}$};
+    
+    % 连接线
+    \draw (A) -| (xor1.in 1);
+    \draw (B) -| (xor1.in 2);
+    \draw (xor1.out) |- (xor2.in 1);
+    \draw (Cin) -| (xor2.in 2);
+    \draw (xor1.out) |- (and1.in 1);
+    \draw (Cin) |- (and1.in 2);
+    \draw (A) |- ($(A)+(0.5,0)$) |- (and2.in 1);
+    \draw (B) |- ($(B)+(0.5,0)$) |- (and2.in 2);
+    \draw (and1.out) |- (or.in 1);
+    \draw (and2.out) |- (or.in 2);
+    \draw (xor2.out) -- (Sum);
+    \draw (or.out) -- (Cout);
+\end{circuitikz}
+\caption{全加器电路图}
+\end{figure}
+
+\end{document}

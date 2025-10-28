@@ -5,7 +5,7 @@
 </bookmarks>
 <node TEXT="CODE笔记" FOLDED="false" ID="ID_874441607" CREATED="1761200221034" MODIFIED="1761225778490" LINK="../yuan/todo-sunny.mm#ID_874441607">
 <edge STYLE="bezier" COLOR="#0000ff" WIDTH="1" DASH="SOLID"/>
-<hook NAME="MapStyle" background="#cddec2ff" zoom="1.6105102">
+<hook NAME="MapStyle" background="#cddec2ff" zoom="1.5">
     <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_tags="UNDER_NODES" show_note_icons="true" fit_to_viewport="false" show_icons="BESIDE_NODES" showTagCategories="false"/>
     <tags category_separator="::"/>
 
@@ -310,6 +310,32 @@
 <node TEXT="" ID="ID_219383091" CREATED="1761235912611" MODIFIED="1761235912611"/>
 </node>
 <node TEXT="继电器到逻辑门" POSITION="top_or_left" ID="ID_1491214990" CREATED="1761200258311" MODIFIED="1761235742593"/>
+<node TEXT="门电路推导" POSITION="top_or_left" ID="ID_1000280404" CREATED="1761572207557" MODIFIED="1761572218183">
+<node TEXT="加法器" ID="ID_348174821" CREATED="1761577948931" MODIFIED="1761578007828">
+<node TEXT="画结果表，分加法、进位两张表" ID="ID_1605541787" CREATED="1761578060659" MODIFIED="1761578145179"/>
+<node TEXT="进位表与AND效果相同" ID="ID_1867766876" CREATED="1761578008932" MODIFIED="1761578157374"/>
+<node TEXT="加法表" ID="ID_678719041" CREATED="1761578040417" MODIFIED="1761578189122">
+<node TEXT="与OR相似除右下角" ID="ID_1342694893" CREATED="1761578189578" MODIFIED="1761578206959"/>
+<node TEXT="与NAND相似除左上角" ID="ID_1255201970" CREATED="1761578207514" MODIFIED="1761578226778"/>
+<node ID="ID_1784181894" CREATED="1761578227994" MODIFIED="1761578277035"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      合并加发表<content ename="content"/>与OR、NAND到新结果表
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="对比OR/NAND的输出与想要结果关系" ID="ID_726741150" CREATED="1761578277598" MODIFIED="1761578307615"/>
+<node TEXT="推断出需要AND连接OR/NAND" ID="ID_1221313735" CREATED="1761578314617" MODIFIED="1761578336129"/>
+</node>
+</node>
+</node>
 </node>
 </node>
 <node TEXT="Latex circuitikz" POSITION="top_or_left" ID="ID_398419963" CREATED="1761461299677" MODIFIED="1761461337194">

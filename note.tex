@@ -119,4 +119,17 @@
   (xor1.out) node[right] {$A\oplus B$};  
 \end{circuitikz}  
 
+\section{加法器}
+加法器是数字电路中用于执行二进制加法运算的基本组件。根据输入信号的不同，主要分为半加器和全加器。
+半加器（Half Adder）是一种能够对两个单比特二进制数进行加法运算的电路。它有两个输入端，分别表示被加数A和加数B，以及两个输出端，分别表示和（Sum）和进位（Carry）。半加器的逻辑功能可以通过以下布尔表达式表示：
+\[\texttt{Sum} = A \oplus B \]
+\[\texttt{Carry} = A \cdot B \]
+
+全加器（Full Adder）则是在半加器的基础上增加了一个进位输入端C\(_{in}\)，用于处理来自低位的进位。全加器有三个输入端，分别是被加数A、加数B和进位输入C\(_{in}\)，以及两个输出端，分别是和（Sum）和进位输出C\(_{out}\)。全加器的逻辑功能可以通过以下布尔表达式表示：
+\[\texttt{Sum} = A \oplus B \oplus C_{in} \]
+\[\texttt{C}_{out} = (A \cdot B) + (C_{in} \cdot (A \oplus B)) \] 
+下面的电路图展示了半加器和全加器的实现方式：
+% 半加器电路图
+
+
 \end{document}
