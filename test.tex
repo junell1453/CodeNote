@@ -1,6 +1,21 @@
-\documentclass{standalone}
+\documentclass{article}
 \usepackage{circuitikz}
 \begin{document}
+% 定义半加器模块
+\newcommand{\halfadder}{
+    % 绘制半加器矩形框
+    \draw (0,0) rectangle (3,2);
+
+    % 在框内添加"半加器"文字
+    \node at (1.5, 1) {半加器};
+
+    % 输入端口A，B，输出端口S，CO
+    \draw (0,1.5) node[right] {A} -- ++(-0.5,0); % 输入A
+    \draw (0,0.5) node[right] {B} -- ++(-0.5,0); % 输入B
+    \draw (3,1.5) node[left] {S} -- ++(0.5,0);  % 输出S
+    \draw (3,0.5) node[left] {CO} -- ++(0.5,0); % 输出CO
+}   
+
 \begin{circuitikz}[american, scale=1, transform shape]
     \draw (0,0) node[above]{$A$} to[short, o-] ++(2,0)
     node[nand port,anchor=in 1] (nand1){}
@@ -8,4 +23,13 @@
     node[nand port,anchor=out] (nand2){}
     (nand1.out) node[right] {$Y = \overline{A}$};
 \end{circuitikz}
+
+
+
+
+% 使用半加器模块
+\begin{circuitikz}
+\halfadder
+\end{circuitikz}
+
 \end{document}
