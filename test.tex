@@ -16,13 +16,6 @@
     \draw (3,0.5) node[left] {CO} -- ++(0.5,0); % 输出CO
 }   
 
-\begin{circuitikz}[american, scale=1, transform shape]
-    \draw (0,0) node[above]{$A$} to[short, o-] ++(2,0)
-    node[nand port,anchor=in 1] (nand1){}
-    (nand1.in 2)--++(0,-1) 
-    node[nand port,anchor=out] (nand2){}
-    (nand1.out) node[right] {$Y = \overline{A}$};
-\end{circuitikz}
 
 
 
