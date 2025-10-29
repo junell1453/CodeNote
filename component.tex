@@ -4,12 +4,15 @@
 
 \begin{document}
 \newcommand*{\lf}[1]{ %#1 node name
-    rectangle ++(3,2)node[right]{#1 above right}
-    ++(-1.5,-1)coordinate(O) node{#1}
+    rectangle ++(3,2)node[right]{#1}
+    ++(-1.5,-1)coordinate(O) node{#1.center}
 }
 
 \begin{circuitikz}
-    \draw (0,0) \lf{A};
-    \draw (3,3) \lf{B};
+    % \draw (0,0) \lf{A};
+    % \draw (3,3) \lf{B};
+
+    \draw (0,0) node[fourport] (F) {4P};
+    \draw (F.port1) node[right]{A};
 \end{circuitikz}
 \end{document}
