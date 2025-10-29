@@ -125,7 +125,7 @@
   </body>
 </html></richcontent>
 <hook URI="files/output.png" SIZE="0.75" NAME="ExternalObject"/>
-<node TEXT="\latex A NAND B=$\overline{A\cdot B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761448264638"><richcontent TYPE="DETAILS">
+<node TEXT="\latex A NAND B=$\overline{A\cdot B}=\overline{A}+\overline{B}$" ID="ID_982342688" CREATED="1761230619419" MODIFIED="1761702742348"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -196,6 +196,18 @@
   </body>
 </html></richcontent>
 </node>
+</node>
+<node TEXT="\latex &#xa;\begin{tabular}{|c|c|c|c|c|}&#xa;\hline&#xa;\textbf{A in} &amp; \textbf{B in} &amp; \textbf{OR out} &amp; \textbf{NAND out} &amp; \textbf{期望} \\&#xa;\hline&#xa;0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\&#xa;\hline&#xa;0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\&#xa;\hline&#xa;1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\&#xa;\hline&#xa;1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\&#xa;\hline&#xa;\end{tabular}" POSITION="bottom_or_right" ID="ID_351177309" CREATED="1761640209078" MODIFIED="1761652753506"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      期望与OR/NAND相差一位,做表放一起发现可AND
+    </p>
+  </body>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -288,22 +300,6 @@
 </node>
 </node>
 </node>
-<node TEXT="电路推导" POSITION="bottom_or_right" ID="ID_278606848" CREATED="1761652371899" MODIFIED="1761652380379">
-<node TEXT="XOR" POSITION="bottom_or_right" ID="ID_679308466" CREATED="1761653127134" MODIFIED="1761653137764">
-<node TEXT="\latex &#xa;\begin{tabular}{|c|c|c|c|c|}&#xa;\hline&#xa;\textbf{A in} &amp; \textbf{B in} &amp; \textbf{OR out} &amp; \textbf{NAND out} &amp; \textbf{期望} \\&#xa;\hline&#xa;0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\&#xa;\hline&#xa;0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\&#xa;\hline&#xa;1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\&#xa;\hline&#xa;1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\&#xa;\hline&#xa;\end{tabular}" POSITION="bottom_or_right" ID="ID_351177309" CREATED="1761640209078" MODIFIED="1761652753506"><richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      期望与OR/NAND相差一位,做表放一起发现可AND
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
-</node>
 </node>
 <node TEXT="布尔代数" POSITION="top_or_left" ID="ID_1830821515" CREATED="1761200328479" MODIFIED="1761225795425">
 <edge COLOR="#00007c"/>
@@ -328,9 +324,6 @@
 </node>
 <node TEXT="待整理" POSITION="top_or_left" ID="ID_248082131" CREATED="1761235723750" MODIFIED="1761235730335">
 <edge COLOR="#007c7c"/>
-<node TEXT="补码" POSITION="top_or_left" ID="ID_1379291245" CREATED="1761200250192" MODIFIED="1761235739345">
-<node TEXT="用加法来代替减法" ID="ID_140584548" CREATED="1761226610412" MODIFIED="1761226673371"/>
-</node>
 <node TEXT="电路构成" POSITION="top_or_left" ID="ID_1078313155" CREATED="1761235921753" MODIFIED="1761235926369">
 <node TEXT="开关运算" POSITION="top_or_left" ID="ID_597418984" CREATED="1761232066139" MODIFIED="1761236933162">
 <node TEXT="A并B=A+B" ID="ID_341639215" CREATED="1761232094293" MODIFIED="1761236980503"/>
@@ -374,6 +367,9 @@
 <edge COLOR="#0000ff"/>
 <node TEXT="画结果表，分加法、进位两张表" ID="ID_1605541787" CREATED="1761578060659" MODIFIED="1761578145179"/>
 <node TEXT="进位表与AND效果相同" ID="ID_1867766876" CREATED="1761578008932" MODIFIED="1761578157374"/>
+<node TEXT="半加器" ID="ID_1766677163" CREATED="1761705511070" MODIFIED="1761705518579">
+<node TEXT="" ID="ID_1955891068" CREATED="1761705519144" MODIFIED="1761705519144"/>
+</node>
 </node>
 </node>
 </map>
