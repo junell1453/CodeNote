@@ -26,7 +26,7 @@ Turing Complete+布尔代数基础知识。
 \centering
 \begin{circuitikz}
   \draw
-  (0,0) node[not port] (not1) {\texttt{N}}
+  (0,0) node[not port] (not1) {}
   (not1.in 1) node[left] {$A$}
   (not1.out) node[right] {$\overline{A}$};  
 \end{circuitikz}
@@ -38,7 +38,7 @@ Turing Complete+布尔代数基础知识。
 \centering
 \begin{circuitikz}
   \draw
-  (0,0) node[and port] (and1) {\texttt{AND}}
+  (0,0) node[and port] (and1) {}
   (and1.in 1) node[left] {$A$}
   (and1.in 2) node[left] {$B$}
   (and1.out) node[right] {$A \cdot B$};
@@ -51,7 +51,7 @@ Turing Complete+布尔代数基础知识。
 \centering
 \begin{circuitikz}
   \draw
-  (0,0) node[or port] (or1) {\texttt{OR}}
+  (0,0) node[or port] (or1) {}
   (or1.in 1) node[left] {$A$}
   (or1.in 2) node[left] {$B$}
   (or1.out) node[right] {$A+B$};  
@@ -64,7 +64,7 @@ Turing Complete+布尔代数基础知识。
 \centering
 \begin{circuitikz}
   \draw
-  (0,0) node[nand port] (nand1) {\texttt{NAND}}
+  (0,0) node[nand port] (nand1) {}
   (nand1.in 1) node[left] {$A$}
   (nand1.in 2) node[left] {$B$}
   (nand1.out) node[right] {
@@ -78,7 +78,7 @@ Turing Complete+布尔代数基础知识。
 \centering  
 \begin{circuitikz}
   \draw
-  (0,0) node[nor port] (nor1) {\texttt{NOR}}
+  (0,0) node[nor port] (nor1) {}
   (nor1.in 1) node[left] {$A$}
   (nor1.in 2) node[left] {$B$}
   (nor1.out) node[right] {$\overline{A} \cdot \overline{B}=\overline{A+B}$};  
