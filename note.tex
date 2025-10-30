@@ -208,13 +208,46 @@ Turing Complete+布尔代数基础知识。
 
 
 
-\section{半加器(Half Adder)}
-\[\texttt{Sum} = A \oplus B \]
-\[\texttt{Carry} = A \cdot B \]
+\subsection{半加器(Half Adder)}
+\begin{circuitikz}
+  \draw(0,0)node[left](A){A}to[short,o-]++(1,0)coordinate(JA)
+  to[short,*-]++(.5,0)node[xor port,anchor=in 1](xor1){}
+  (xor1.in 2)to[short,-*]++(-1,0)coordinate(JB)
+  to[short,-o](xor1.in 2-|A.east)node[left](B){B}
+  (xor1.out)node[right]{Sum}
+  (xor1.east)++(0,-1.5)node[and port](and1){}
+  (and1.in 1)-|(JA)
+  (and1.in 2)-|(JB)
+  (and1.out)node[right]{Carry};
+\end{circuitikz}
 
-\section{全加器(Full Adder)}
-\[\texttt{Sum} = A \oplus B \oplus C_{in} \]
-\[\texttt{C}_{out} = (A \cdot B) + (C_{in} \cdot (A \oplus B)) \] 
-% 半加器电路图
+
+\newcommand*{\ha}[2]{ %#1 node name,#2 anchor
+    node[fourport,anchor=#2,scale=.65] (#1) {}
+    (#1.port1) node[right]{B}
+    (#1.port2) node[left]{CO}
+    (#1.port3) node[left]{S}
+    (#1.port4) node[right]{A}
+}
+简化为
+\begin{circuitikz}
+  \ctikzset{quadpoles/fourport/width=2};
+  \draw(0,0)\ha{F0}{port4};
+\end{circuitikz}
+
+
+\subsection{全加器(Full Adder)}
+\begin{circuitikz}  
+    \ctikzset{quadpoles/fourport/width=2}
+    \draw (0,0)node[left](A){A}to[short,o-]++(.5,0)
+    \ha{F0}{port4}
+    (F0.port3)--++(1,0)\ha{F1}{port1}
+    (F0.port1)to[short,-o](F0.port1-|A.east)node[left]{B}
+    (F1.port4)to[short,-o](F1.port4-|A.east)node[left]{Carry}
+    (F1.port2)--++(.5,0)node[or port,anchor=in 1](or1){}
+    (F0.port2)--(or1.in 2)
+    (or1.out)node[right]{Carry}
+    (F1.port3)--(F1.port3-|or1.out)node[right]{Sum};
+\end{circuitikz}
 
 \end{document}

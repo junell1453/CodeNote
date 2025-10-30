@@ -3,19 +3,33 @@
 \usepackage{circuitikz}
 
 \begin{document}
-\newcommand*{\fp}[2]{ %#1 node name,#2 anchor
-    node[fourport,anchor=#2,scale=.8] (#1) {}
+\newcommand*{\ha}[2]{ %#1 node name,#2 anchor
+    node[fourport,anchor=#2,scale=.65] (#1) {}
     (#1.port1) node[right]{B}
     (#1.port2) node[left]{CO}
     (#1.port3) node[left]{S}
     (#1.port4) node[right]{A}
 }
 
-
 \begin{circuitikz}  
     \ctikzset{quadpoles/fourport/width=2}
-    \draw (0,0)node[left]{A}to[short,o-]++(.5,0)
-    \fp{F0}{port4}
-    (F0.port3)--++(1,0)\fp{F1}{port1};
+    \draw (0,0)node[left](A){A}to[short,o-]++(.5,0)
+    \ha{A0}{port4}
+    (A0.port3)--++(1,0)\ha{A1}{port1}
+    (A0.port1)to[short,-o](A0.port1-|A.east)node[left]{B}
+    (A1.port4)to[short,-o](A1.port4-|A.east)node[left]{Carry}
+    (A1.port2)--++(.5,0)node[or port,anchor=in 1](or1){}
+    (A0.port2)--(or1.in 2)
+    (or1.out)node[right]{Carry}
+    (A1.port3)--(A1.port3-|or1.out)node[right]{Sum};
 \end{circuitikz}
+
+\tikzset{fadder/.style={flipflop, flipflop def={
+    t1=CI, t2=A, t3=B, t4=S,t6=CO}}
+}
+\begin{circuitikz}
+    \ctikzset{multipoles/flipflop/width=1.5};
+    \draw(0,0)node[fadder,scale=1.2]{};
+\end{circuitikz}
+
 \end{document}

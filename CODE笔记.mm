@@ -363,12 +363,190 @@
 </node>
 </node>
 </node>
-<node TEXT="加法器" POSITION="bottom_or_right" ID="ID_348174821" CREATED="1761577948931" MODIFIED="1761652247083">
+<node TEXT="加法器" FOLDED="true" POSITION="bottom_or_right" ID="ID_348174821" CREATED="1761577948931" MODIFIED="1761652247083">
 <edge COLOR="#0000ff"/>
-<node TEXT="画结果表，分加法、进位两张表" ID="ID_1605541787" CREATED="1761578060659" MODIFIED="1761578145179"/>
-<node TEXT="进位表与AND效果相同" ID="ID_1867766876" CREATED="1761578008932" MODIFIED="1761578157374"/>
-<node TEXT="半加器" ID="ID_1766677163" CREATED="1761705511070" MODIFIED="1761705518579">
-<node TEXT="" ID="ID_1955891068" CREATED="1761705519144" MODIFIED="1761705519144"/>
+<node TEXT="半加器" POSITION="bottom_or_right" ID="ID_1766677163" CREATED="1761705511070" MODIFIED="1761828093191"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      half adder
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="两个输入,不能处理进位" ID="ID_1318185808" CREATED="1761828095951" MODIFIED="1761828160481"/>
+<node TEXT="输出加和与进位" ID="ID_1955891068" CREATED="1761705519144" MODIFIED="1761828334869"/>
+</node>
+<node TEXT="全加器" POSITION="bottom_or_right" ID="ID_1654889287" CREATED="1761828171079" MODIFIED="1761828183087"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      full adder
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="带进位输入" ID="ID_1133431726" CREATED="1761828183486" MODIFIED="1761828225704"/>
+<node TEXT="两个半加器S与B相连+进位输入求和,两个进位通过或计算进位" ID="ID_976092238" CREATED="1761835756592" MODIFIED="1761835864952"/>
+</node>
+<node TEXT="8位加法器" POSITION="bottom_or_right" ID="ID_1712073272" CREATED="1761828229412" MODIFIED="1761828237516">
+<node TEXT="8个全加器通过进位输出与进位输入串联" ID="ID_223050367" CREATED="1761828237830" MODIFIED="1761828369448"/>
+</node>
+<node TEXT="16位加法器" POSITION="bottom_or_right" ID="ID_669064026" CREATED="1761828377230" MODIFIED="1761828382694">
+<node TEXT="两个8位加法器进位输出输入相连" ID="ID_988915956" CREATED="1761828392844" MODIFIED="1761828413847"/>
+</node>
+<node TEXT="补数" POSITION="bottom_or_right" ID="ID_1850210746" CREATED="1761828911114" MODIFIED="1761838761508"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      complement
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="有限位数,若表示负数则需有符号表示" POSITION="bottom_or_right" ID="ID_734763433" CREATED="1761838791765" MODIFIED="1761841653887"/>
+<node TEXT="无符号" POSITION="bottom_or_right" ID="ID_1482330813" CREATED="1761835642343" MODIFIED="1761838771620">
+<node TEXT="没有表示意义，在减法转换成加法时用" ID="ID_619613811" CREATED="1761841661595" MODIFIED="1761841681212"/>
+<node TEXT="两位10进制" ID="ID_1711012085" CREATED="1761830125496" MODIFIED="1761840086334">
+<node TEXT="减数的相对于9的补数" POSITION="bottom_or_right" ID="ID_1654232983" CREATED="1761829209895" MODIFIED="1761840089146"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      对9的补数
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="8位二进制" ID="ID_1511859230" CREATED="1761829907348" MODIFIED="1761840093473">
+<node TEXT="减数相对于11111111的补码为自身取反" ID="ID_355116476" CREATED="1761830250765" MODIFIED="1761840096380"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      对1的补数
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+<node TEXT="有符号" POSITION="bottom_or_right" ID="ID_851890567" CREATED="1761834890621" MODIFIED="1761840435712"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      signed
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="最高位为符号位,负数用补码表示" ID="ID_518701655" CREATED="1761834903950" MODIFIED="1761840445041"/>
+<node TEXT="两位10进制[-50,49]" ID="ID_1330268907" CREATED="1761834920174" MODIFIED="1761840060529"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      10的补数=9补数+1
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="50,...,98,99,0,1,...,49" ID="ID_50667307" CREATED="1761835208265" MODIFIED="1761836630054"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      无负号,50以上为负数
+    </p>
+    <p>
+      50为-50，99为-1
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="原数的补数=99+原数+1" ID="ID_1898454829" CREATED="1761835526457" MODIFIED="1761841938499"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      不考虑溢出
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="-1的补数=100+(-1)=99" ID="ID_1626538461" CREATED="1761841852184" MODIFIED="1761841853738"/>
+<node TEXT="3的补数=100+3=3" ID="ID_988739027" CREATED="1761841854130" MODIFIED="1761841902351"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      100溢出,不考虑
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="补数还原=99-补数+1" ID="ID_1261155594" CREATED="1761841837083" MODIFIED="1761842395219">
+<icon BUILTIN="help"/>
+<node TEXT="97的原数=100-97=3" ID="ID_827693639" CREATED="1761842084610" MODIFIED="1761842388203"/>
+<node TEXT="正数呢？" ID="ID_1527384994" CREATED="1761842098843" MODIFIED="1761842312170"/>
+</node>
+</node>
+<node TEXT="8位二进制[-128,127]" ID="ID_19697836" CREATED="1761834958572" MODIFIED="1761840069646"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      对2的补数=1补数+1
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="原数的补数=原数求反+1" ID="ID_359950120" CREATED="1761842410784" MODIFIED="1761842436843"/>
+<node TEXT="补数还原=补数求反+1" ID="ID_1831014832" CREATED="1761842448301" MODIFIED="1761842464297"/>
+</node>
+</node>
+</node>
+<node TEXT="减法" POSITION="bottom_or_right" ID="ID_595166055" CREATED="1761830431132" MODIFIED="1761830434465">
+<node TEXT="计算减数补码+被减数+1-溢出数" ID="ID_526032310" CREATED="1761830434857" MODIFIED="1761831014469"/>
+<node TEXT="电路控制" ID="ID_687547583" CREATED="1761842522953" MODIFIED="1761842538590">
+<node TEXT="在加法器上增加减法开关，与输入B做XOR" ID="ID_354420509" CREATED="1761842544094" MODIFIED="1761842687867"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      0加1减,0保持输入不变,1原数取反(+1呢？)
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="例" POSITION="bottom_or_right" ID="ID_545277269" CREATED="1761830166136" MODIFIED="1761830178845">
+<node TEXT="55-27=55-27+99+1-100=55+72+1-100" POSITION="bottom_or_right" ID="ID_1432985736" CREATED="1761830622300" MODIFIED="1761830623811"/>
+<node TEXT="8-3=00001000-00000101&#xa;11111111-00000101=11111010&#xa;00001000+11111010+1" POSITION="bottom_or_right" ID="ID_101460957" CREATED="1761830662244" MODIFIED="1761830665841"/>
+</node>
 </node>
 </node>
 </node>
